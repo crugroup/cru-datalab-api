@@ -1,11 +1,10 @@
 {
 	"info": {
-		"_postman_id": "006ab5f5-606b-4a1f-a16b-5204b3628af8",
+		"_postman_id": "3d07bc52-65c3-464c-b5c4-2cf86519e5ed",
 		"name": "Knoema API",
 		"description": "This is a collection of example requests that can be used with the Knoema API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "1249766",
-		"_collection_link": "https://www.postman.com/orange-firefly-860448/cru-public-api/collection/9xuyloj/knoema-api?action=share&source=collection_link&creator=1249766"
+		"_exporter_id": "1249766"
 	},
 	"item": [
 		{
@@ -286,6 +285,58 @@
 				}
 			},
 			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"var appId = pm.variables.get(\"client_id\");",
+					"var appSecret = pm.variables.get(\"client_secret\");",
+					"var authHeader = function () {",
+					"   var currentTime = new Date();",
+					"       var n = (\"0\" + currentTime.getUTCDate()).slice(-2)",
+					"       + \"-\" + (\"0\" + (currentTime.getUTCMonth()+1)).slice(-2)",
+					"       + \"-\" + currentTime.getUTCFullYear().toString().substr(-2)",
+					"       + \"-\" + (\"0\" + currentTime.getUTCHours()).slice(-2);",
+					"       var t = CryptoJS.HmacSHA1(appSecret, n).toString(CryptoJS.enc.Base64);",
+					"",
+					"       return \"Knoema \" + appId + \":\" + t + \":1.2\";",
+					"}",
+					"",
+					"",
+					"pm.request.headers.add({",
+					" key: \"Authorization\",",
+					" value: authHeader()}",
+					" );",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "client_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "client_secret",
+			"value": "",
+			"type": "string"
 		}
 	]
 }
