@@ -15,7 +15,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"appId\": \"\",\n    \"appSecret\": \"\"\n}",
+					"raw": "{\n    \"appId\": \"{{client_id}}\",\n    \"appSecret\": \"{{client_secret}}\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -286,6 +286,40 @@
 				}
 			},
 			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "client_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "client_secret",
+			"value": "",
+			"type": "string"
 		}
 	]
 }
