@@ -1,10 +1,11 @@
 {
 	"info": {
-		"_postman_id": "3d07bc52-65c3-464c-b5c4-2cf86519e5ed",
+		"_postman_id": "006ab5f5-606b-4a1f-a16b-5204b3628af8",
 		"name": "Knoema API",
 		"description": "This is a collection of example requests that can be used with the Knoema API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "1249766"
+		"_exporter_id": "1249766",
+		"_collection_link": "https://www.postman.com/orange-firefly-860448/cru-public-api/collection/9xuyloj/knoema-api?action=share&source=collection_link&creator=1249766"
 	},
 	"item": [
 		{
@@ -45,7 +46,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Knoema OOJdnxfJ9WKijQ:O82Y0htPrDV4OhyoCc2HUz/+eQ8=:1.2",
+						"value": "",
 						"type": "text"
 					}
 				],
@@ -74,7 +75,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Knoema OOJdnxfJ9WKijQ:xBKOUETEFoai7QtrAgY0WxKj5xA=:1.2",
+						"value": "",
 						"type": "text"
 					}
 				],
@@ -104,7 +105,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Knoema OOJdnxfJ9WKijQ:xBKOUETEFoai7QtrAgY0WxKj5xA=:1.2",
+						"value": "",
 						"type": "text"
 					}
 				],
@@ -165,7 +166,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Knoema OOJdnxfJ9WKijQ:xBKOUETEFoai7QtrAgY0WxKj5xA=:1.2",
+						"value": "",
 						"type": "text"
 					}
 				],
@@ -197,7 +198,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Knoema OOJdnxfJ9WKijQ:xBKOUETEFoai7QtrAgY0WxKj5xA=:1.2",
+						"value": "",
 						"type": "text"
 					}
 				],
@@ -255,7 +256,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Knoema OOJdnxfJ9WKijQ:xBKOUETEFoai7QtrAgY0WxKj5xA=:1.2",
+						"value": "",
 						"type": "text"
 					}
 				],
