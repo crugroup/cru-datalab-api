@@ -1,0 +1,343 @@
+{
+	"info": {
+		"_postman_id": "006ab5f5-606b-4a1f-a16b-5204b3628af8",
+		"name": "DataLab API",
+		"description": "This is a collection of example requests that can be used with the Knoema API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1249766",
+		"_collection_link": "https://www.postman.com/orange-firefly-860448/cru-public-api/collection/9xuyloj/datalab-api?action=share&source=collection_link&creator=1249766"
+	},
+	"item": [
+		{
+			"name": "AuthHeader",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"appId\": \"{{client_id}}\",\n    \"appSecret\": \"{{client_secret}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://cru-public-api.azurewebsites.net/api/dataLabAuth",
+					"protocol": "https",
+					"host": [
+						"cru-public-api",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"dataLabAuth"
+					]
+				},
+				"description": "Use this request to retrieve your Authorization Header"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Datasets",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://crudatalab.knoema.com/api/1.0/meta/dataset",
+					"protocol": "https",
+					"host": [
+						"crudatalab",
+						"knoema",
+						"com"
+					],
+					"path": [
+						"api",
+						"1.0",
+						"meta",
+						"dataset"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a dataset",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://crudatalab.knoema.com/api/1.0/meta/dataset/CRU-Prices",
+					"protocol": "https",
+					"host": [
+						"crudatalab",
+						"knoema",
+						"com"
+					],
+					"path": [
+						"api",
+						"1.0",
+						"meta",
+						"dataset",
+						"CRU-Prices"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get dataset with filter",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://crudatalab.knoema.com/api/1.0/meta/dataset/CRU-Prices?Commodity=Aluminium",
+					"protocol": "https",
+					"host": [
+						"crudatalab",
+						"knoema",
+						"com"
+					],
+					"path": [
+						"api",
+						"1.0",
+						"meta",
+						"dataset",
+						"CRU-Prices"
+					],
+					"query": [
+						{
+							"key": "Price Detail",
+							"value": "Hot-rolled Coil, 3.00mm, Spot price",
+							"disabled": true
+						},
+						{
+							"key": "Price Type",
+							"value": "Point",
+							"disabled": true
+						},
+						{
+							"key": "MARKET",
+							"value": "China, ex-warehouse",
+							"disabled": true
+						},
+						{
+							"key": "Unit of Measurement",
+							"value": "Local Currency and Weight Units",
+							"disabled": true
+						},
+						{
+							"key": "separator",
+							"value": ";",
+							"disabled": true
+						},
+						{
+							"key": "Commodity",
+							"value": "Aluminium"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Dimension data",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://crudatalab.knoema.com/api/1.0/meta/dataset/CRU-Prices/dimension/Commodity Group",
+					"protocol": "https",
+					"host": [
+						"crudatalab",
+						"knoema",
+						"com"
+					],
+					"path": [
+						"api",
+						"1.0",
+						"meta",
+						"dataset",
+						"CRU-Prices",
+						"dimension",
+						"Commodity Group"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Dimension data v2",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://crudatalab.knoema.com/api/2.0/data?datasetId=CRU-Prices&Commodity Group=Steel - Carbon&Price Detail=Hot-rolled Coil, 3.00mm, Spot price&Price Type=Point&MARKET=China, ex-warehouse&Unit of Measurement=Local Currency and Weight Units&separator=;",
+					"protocol": "https",
+					"host": [
+						"crudatalab",
+						"knoema",
+						"com"
+					],
+					"path": [
+						"api",
+						"2.0",
+						"data"
+					],
+					"query": [
+						{
+							"key": "datasetId",
+							"value": "CRU-Prices"
+						},
+						{
+							"key": "Commodity Group",
+							"value": "Steel - Carbon"
+						},
+						{
+							"key": "Price Detail",
+							"value": "Hot-rolled Coil, 3.00mm, Spot price"
+						},
+						{
+							"key": "Price Type",
+							"value": "Point"
+						},
+						{
+							"key": "MARKET",
+							"value": "China, ex-warehouse"
+						},
+						{
+							"key": "Unit of Measurement",
+							"value": "Local Currency and Weight Units"
+						},
+						{
+							"key": "separator",
+							"value": ";"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Prices dataset",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \n    \"Dataset\": \"CRU-Prices\", \n    \"Stub\": [ \n        { \n            \"DimensionId\": \"Time\", \n            \"Members\": [\n                \"2023M1\",\n                \"2023M2\",\n                \"2023M3\",\n                \"2023M4\",\n                \"2023M5\",\n                \"2023M6\",\n                \"2023M7\",\n                \"2023M8\",\n                \"2023M9\",\n                \"2023M10\",\n                \"2023M11\",\n                \"2023M12\",\n                \"2024M1\",\n                \"2024M2\",\n                \"2024M3\",\n                \"2024M4\",\n                \"2024M5\",\n                \"2024M6\",\n                \"2024M7\",\n                \"2024M8\",\n                \"2024M9\",\n                \"2024M10\"\n            ]\n        } \n    ], \n    \"Header\": [ \n        { \n            \"DimensionId\": \"Commodity Group\", \n            \"Members\": [ \n                \"Steel - Carbon\", \n                \"Steel - Raw Materials\" \n            ] \n        }, \n        { \n            \"DimensionId\": \"Price Detail\", \n            \"Members\": [ \n                \"Scrap, Obsolete, HMS or like, Spot price\", \n                \"Wire Rod, High Carbon, 0.45-0.70% C, Spot price\", \n            ] \n        }, \n        { \n            \"DimensionId\": \"Price Type\", \n            \"Members\": [ \n                \"Point\" \n            ] \n        }, \n        { \n            \"DimensionId\": \"MARKET\" \n        }, \n        { \n            \"DimensionId\":\"Unit of Measurement\", \n            \"Members\": [ \n                \"Local Currency and Weight Units\" \n            ] \n        } \n    ], \n    \"Frequency\": \"M\" \n} \n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://crudatalab.knoema.com/api/1.0/data/pivot",
+					"protocol": "https",
+					"host": [
+						"crudatalab",
+						"knoema",
+						"com"
+					],
+					"path": [
+						"api",
+						"1.0",
+						"data",
+						"pivot"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"var appId = pm.variables.get(\"client_id\");",
+					"var appSecret = pm.variables.get(\"client_secret\");",
+					"var authHeader = function () {",
+					"   var currentTime = new Date();",
+					"       var n = (\"0\" + currentTime.getUTCDate()).slice(-2)",
+					"       + \"-\" + (\"0\" + (currentTime.getUTCMonth()+1)).slice(-2)",
+					"       + \"-\" + currentTime.getUTCFullYear().toString().substr(-2)",
+					"       + \"-\" + (\"0\" + currentTime.getUTCHours()).slice(-2);",
+					"       var t = CryptoJS.HmacSHA1(appSecret, n).toString(CryptoJS.enc.Base64);",
+					"",
+					"       return \"Knoema \" + appId + \":\" + t + \":1.2\";",
+					"}",
+					"",
+					"",
+					"pm.request.headers.add({",
+					" key: \"Authorization\",",
+					" value: authHeader()}",
+					" );",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "client_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "client_secret",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
