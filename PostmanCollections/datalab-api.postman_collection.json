@@ -23,12 +23,12 @@
 					}
 				},
 				"url": {
-					"raw": "https://cru-public-api.azurewebsites.net/api/dataLabAuth",
+					"raw": "https://public-api.crugroup.com/api/dataLabAuth",
 					"protocol": "https",
 					"host": [
-						"cru-public-api",
-						"azurewebsites",
-						"net"
+						"public-api",
+						"crugroup",
+						"com"
 					],
 					"path": [
 						"api",
