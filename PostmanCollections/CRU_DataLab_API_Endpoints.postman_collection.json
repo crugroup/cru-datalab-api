@@ -1,0 +1,913 @@
+{
+	"info": {
+		"_postman_id": "4519ca63-d10b-4736-aaed-e0665366f1ed",
+		"name": "CRU DataLab API Endpoints",
+		"description": "---\n\nThis collection has examples of CRU DataLab API Endpoints. On the left, you can click through particular GET requests and Send them to get the output.\n\n#### Authorization Token (credentials)\n\nIn the \"Auth 🟢\" tab in this collection (just above), you can enter an Authorization Token. This requires you to have API access for your CRU account. If you do not have access, you are still able to run the sample endpoints from the Public sub-folder.\n\n##### To generate a token:\n\n1. Go to [https://datalab.crugroup.com/user/apps](https://datalab.crugroup.com/user/apps) and create new.\n    \n2. Give a name to these credentials, ideally with your company in the name.\n    \n3. Save it, then go to the Token tab (middle top).\n    \n4. Create a token with no expiration date. This token only appears once so please paste it somewhere.\n    \n5. In the \"Auth 🟢\" tab in this collection, please paste the token and AppID in the following format:  \n    Token {AppId}:{token}\n    \n\n<img src=\"https://content.pstmn.io/e117cdbf-4015-443f-929a-e8a19cabfb68/aW1hZ2UucG5n\" width=\"359\" height=\"299\">\n\n[](https://crugroup.atlassian.net/wiki/spaces/PIDG/pages/525598809)\n\n#### Endpoint Descriptions\n\nClick \"View complete documentation\" below, or open up the Documentation panel in any GET request:\n\n<img src=\"https://content.pstmn.io/193aab2e-25fc-42ac-b51c-6e0aadd33053/aW1hZ2UucG5n\" width=\"255\" height=\"322\">\n\nYou can also visit our Swagger page for more information on the parameters: [https://datalab.crugroup.com/domain-api/swagger/index.html](https://datalab.crugroup.com/domain-api/swagger/index.html)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40260154"
+	},
+	"item": [
+		{
+			"name": "Public (no auth needed)",
+			"item": [
+				{
+					"name": "prices-list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://datalab.crugroup.com/domain-api/prices-list",
+							"protocol": "https",
+							"host": [
+								"datalab",
+								"crugroup",
+								"com"
+							],
+							"path": [
+								"domain-api",
+								"prices-list"
+							],
+							"query": [
+								{
+									"key": "continuationToken",
+									"value": "9bbe62fca4652d4bf64fdf5cc0b287a9",
+									"description": "If you want more of the output, enable this in \"Params\" (left checkbox) and edit the value to the continuationToken given in your previous output.",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Returns a list of all prices your account has access to from [/CRU-Prices](https://datalab.crugroup.com/CRU-Prices) including some useful metadata.\n\nA continuation token is typically required to see the entire output, as the list is usually quite long."
+					},
+					"response": []
+				},
+				{
+					"name": "prices1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://datalab.crugroup.com/domain-api/prices?id=231&startDate=2023-01-01&endDate=2024-01-01&frequency=W&type=Midpoint&unit=Local Currency and Weight Units",
+							"protocol": "https",
+							"host": [
+								"datalab",
+								"crugroup",
+								"com"
+							],
+							"path": [
+								"domain-api",
+								"prices"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "231"
+								},
+								{
+									"key": "startDate",
+									"value": "2023-01-01"
+								},
+								{
+									"key": "endDate",
+									"value": "2024-01-01"
+								},
+								{
+									"key": "frequency",
+									"value": "W"
+								},
+								{
+									"key": "type",
+									"value": "Midpoint"
+								},
+								{
+									"key": "unit",
+									"value": "Local Currency and Weight Units"
+								}
+							]
+						},
+						"description": "Returns the values of a specific prices from the parameters in the request. Parameters and data are from [/CRU-Prices](https://datalab.crugroup.com/CRU-Prices)\n\nNOTE: monthly data is assigned to the first day of the month, weekly data to the Monday of the week etc."
+					},
+					"response": []
+				},
+				{
+					"name": "prices2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://datalab.crugroup.com/domain-api/prices?id=869&startDate=2023-01-01&endDate=2024-01-01&frequency=M&type=Point&unit=Local Currency and Weight Units",
+							"protocol": "https",
+							"host": [
+								"datalab",
+								"crugroup",
+								"com"
+							],
+							"path": [
+								"domain-api",
+								"prices"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "869"
+								},
+								{
+									"key": "startDate",
+									"value": "2023-01-01"
+								},
+								{
+									"key": "endDate",
+									"value": "2024-01-01"
+								},
+								{
+									"key": "frequency",
+									"value": "M"
+								},
+								{
+									"key": "type",
+									"value": "Point"
+								},
+								{
+									"key": "unit",
+									"value": "Local Currency and Weight Units"
+								}
+							]
+						},
+						"description": "Returns the values of a specific prices from the parameters in the request. Parameters and data are from [/CRU-Prices](https://datalab.crugroup.com/CRU-Prices)\n\nNOTE: monthly data is assigned to the first day of the month, weekly data to the Monday of the week etc."
+					},
+					"response": []
+				},
+				{
+					"name": "prices-bulk",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://datalab.crugroup.com/domain-api/prices-bulk?date=2024-01-01&includeMetadata=true&frequency=M&unit=USD/t",
+							"protocol": "https",
+							"host": [
+								"datalab",
+								"crugroup",
+								"com"
+							],
+							"path": [
+								"domain-api",
+								"prices-bulk"
+							],
+							"query": [
+								{
+									"key": "date",
+									"value": "2024-01-01"
+								},
+								{
+									"key": "includeMetadata",
+									"value": "true"
+								},
+								{
+									"key": "frequency",
+									"value": "M"
+								},
+								{
+									"key": "unit",
+									"value": "USD/t"
+								}
+							]
+						},
+						"description": "Returns a list of the latest price values for all prices your account has access to, from [/CRU-Prices,](https://datalab.crugroup.com/CRU-Prices) or the price from the date closest (but before) the date you choose.\n\nA continuation token is typically required to see the entire output, as the list is usually quite long."
+					},
+					"response": []
+				},
+				{
+					"name": "forecast-prices-list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://datalab.crugroup.com/domain-api/forecast-prices-list",
+							"protocol": "https",
+							"host": [
+								"datalab",
+								"crugroup",
+								"com"
+							],
+							"path": [
+								"domain-api",
+								"forecast-prices-list"
+							],
+							"query": [
+								{
+									"key": "continuationToken",
+									"value": "536024b808292d1f9525561b9b2b1805",
+									"description": "If you want more of the output, enable this in \"Params\" (left checkbox) and edit the value to the continuationToken given in your previous output.",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Returns a list of all prices your account has access to from [/CRU-Forecast-Prices](https://datalab.crugroup.com/CRU-Forecast-Prices) including some useful metadata.\n\nA continuation token is typically required to see the entire output, as the list is usually quite long."
+					},
+					"response": []
+				},
+				{
+					"name": "forecast-prices1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://datalab.crugroup.com/domain-api/forecast-prices?id=5838f397a35354910829e8884fd95e7c&release=2025 M02&startDate=2023-01-01&endDate=2024-01-01&frequency=M&type=Nominal&unit=Local Currency and Weight Units",
+							"protocol": "https",
+							"host": [
+								"datalab",
+								"crugroup",
+								"com"
+							],
+							"path": [
+								"domain-api",
+								"forecast-prices"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "5838f397a35354910829e8884fd95e7c"
+								},
+								{
+									"key": "release",
+									"value": "2025 M02"
+								},
+								{
+									"key": "startDate",
+									"value": "2023-01-01"
+								},
+								{
+									"key": "endDate",
+									"value": "2024-01-01"
+								},
+								{
+									"key": "frequency",
+									"value": "M"
+								},
+								{
+									"key": "type",
+									"value": "Nominal"
+								},
+								{
+									"key": "unit",
+									"value": "Local Currency and Weight Units"
+								}
+							]
+						},
+						"description": "Returns the forecast prices from [/CRU-Forecast-Prices](https://datalab.crugroup.com/CRU-Forecast-Prices) specified through the parameters."
+					},
+					"response": []
+				},
+				{
+					"name": "forecast-prices2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://datalab.crugroup.com/domain-api/forecast-prices?id=42025973df844ea1ee8234de152157ee&release=2025 Q2&startDate=2023-01-01&endDate=2024-01-01&frequency=Q&type=Nominal&unit=USD/t",
+							"protocol": "https",
+							"host": [
+								"datalab",
+								"crugroup",
+								"com"
+							],
+							"path": [
+								"domain-api",
+								"forecast-prices"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "42025973df844ea1ee8234de152157ee"
+								},
+								{
+									"key": "release",
+									"value": "2025 Q2"
+								},
+								{
+									"key": "startDate",
+									"value": "2023-01-01"
+								},
+								{
+									"key": "endDate",
+									"value": "2024-01-01"
+								},
+								{
+									"key": "frequency",
+									"value": "Q"
+								},
+								{
+									"key": "type",
+									"value": "Nominal"
+								},
+								{
+									"key": "unit",
+									"value": "USD/t"
+								}
+							]
+						},
+						"description": "Returns the forecast prices from [/CRU-Forecast-Prices](https://datalab.crugroup.com/CRU-Forecast-Prices) specified through the parameters."
+					},
+					"response": []
+				},
+				{
+					"name": "asset-list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://datalab.crugroup.com/domain-api/asset-list",
+							"protocol": "https",
+							"host": [
+								"datalab",
+								"crugroup",
+								"com"
+							],
+							"path": [
+								"domain-api",
+								"asset-list"
+							],
+							"query": [
+								{
+									"key": "continuationToken",
+									"value": "873daae22dc47c310f0b882604852684",
+									"description": "If you want more of the output, enable this in \"Params\" (left checkbox) and edit the value to the continuationToken given in your previous output.",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Returns a list of all assets your account has access to from [/CRU-Asset-Platform](https://datalab.crugroup.com/CRU-Asset-Platform) including some useful metadata.\n\nA continuation token is typically required to see the entire output, as the list is usually quite long."
+					},
+					"response": []
+				},
+				{
+					"name": "asset1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://datalab.crugroup.com/domain-api/asset?id=647da193ddfbc206b70dec64&startDate=2022-01-01&endDate=2024-01-01&variable=Strip%20ratio,%20waste:ore",
+							"protocol": "https",
+							"host": [
+								"datalab",
+								"crugroup",
+								"com"
+							],
+							"path": [
+								"domain-api",
+								"asset"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "647da193ddfbc206b70dec64"
+								},
+								{
+									"key": "startDate",
+									"value": "2022-01-01"
+								},
+								{
+									"key": "endDate",
+									"value": "2024-01-01"
+								},
+								{
+									"key": "variable",
+									"value": "Strip%20ratio,%20waste:ore"
+								}
+							]
+						},
+						"description": "Returns dataseries from [/CRU-Asset-Platform](https://datalab.crugroup.com/CRU-Asset-Platform) based on the metadata specified in the request."
+					},
+					"response": []
+				},
+				{
+					"name": "asset2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://datalab.crugroup.com/domain-api/asset?id=633ef280752c29c10cc1bcf7&startDate=2022-01-01&endDate=2024-01-01&variable=Molybdenum%20concentrate%20roasting%20charge%20adjustment,%20$/lb",
+							"protocol": "https",
+							"host": [
+								"datalab",
+								"crugroup",
+								"com"
+							],
+							"path": [
+								"domain-api",
+								"asset"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "633ef280752c29c10cc1bcf7"
+								},
+								{
+									"key": "startDate",
+									"value": "2022-01-01"
+								},
+								{
+									"key": "endDate",
+									"value": "2024-01-01"
+								},
+								{
+									"key": "variable",
+									"value": "Molybdenum%20concentrate%20roasting%20charge%20adjustment,%20$/lb"
+								}
+							]
+						},
+						"description": "Returns dataseries from [/CRU-Asset-Platform](https://datalab.crugroup.com/CRU-Asset-Platform) based on the metadata specified in the request."
+					},
+					"response": []
+				}
+			],
+			"description": "These examples work without the need to put credentials in the authorization of this collection. They return limited samples to show the structure of the output."
+		},
+		{
+			"name": "Non-public (auth needed)",
+			"item": [
+				{
+					"name": "prices-list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://datalab.crugroup.com/domain-api/prices-list",
+							"protocol": "https",
+							"host": [
+								"datalab",
+								"crugroup",
+								"com"
+							],
+							"path": [
+								"domain-api",
+								"prices-list"
+							],
+							"query": [
+								{
+									"key": "continuationToken",
+									"value": "9bbe62fca4652d4bf64fdf5cc0b287a9",
+									"description": "If you want more of the output, enable this in \"Params\" (left checkbox) and edit the value to the continuationToken given in your previous output.",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Returns a list of all prices your account has access to from [/CRU-Prices](https://datalab.crugroup.com/CRU-Prices) including some useful metadata.\n\nA continuation token is typically required to see the entire output, as the list is usually quite long."
+					},
+					"response": []
+				},
+				{
+					"name": "prices",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://datalab.crugroup.com/domain-api/prices?id=144&startDate=2022-01-01&endDate=2027-01-01&frequency=A&frequency=Q&type=Midpoint&unit=Local Currency and Weight Units",
+							"protocol": "https",
+							"host": [
+								"datalab",
+								"crugroup",
+								"com"
+							],
+							"path": [
+								"domain-api",
+								"prices"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "144",
+									"description": "Required - Price ID from dataset"
+								},
+								{
+									"key": "startDate",
+									"value": "2022-01-01",
+									"description": "Optional - otherwise starts from beginning of data series"
+								},
+								{
+									"key": "endDate",
+									"value": "2027-01-01",
+									"description": "Optional - otherwise ends on latest date"
+								},
+								{
+									"key": "frequency",
+									"value": "A",
+									"description": "Required - choose from A;Q;M;W;D (where applicable)"
+								},
+								{
+									"key": "frequency",
+									"value": "Q",
+									"description": "     If you want multiple, add it again in another param"
+								},
+								{
+									"key": "type",
+									"value": "Midpoint",
+									"description": "Optional - otherwise gives Midpoint or Point (still in dev)"
+								},
+								{
+									"key": "unit",
+									"value": "Local Currency and Weight Units",
+									"description": "Optional - otherwise gives Local (still in dev)"
+								},
+								{
+									"key": "continuationToken",
+									"value": "",
+									"description": "Typically not needed here",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Returns the values of a specific prices from the parameters in the request. Parameters and data are from [/CRU-Prices](https://datalab.crugroup.com/CRU-Prices)\n\nNOTE: monthly data is assigned to the first day of the month, weekly data to the Monday of the week etc."
+					},
+					"response": []
+				},
+				{
+					"name": "prices-bulk",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://datalab.crugroup.com/domain-api/prices-bulk?Date=2025-09-12&frequency=M&unit=USD/Local Weight Units",
+							"protocol": "https",
+							"host": [
+								"datalab",
+								"crugroup",
+								"com"
+							],
+							"path": [
+								"domain-api",
+								"prices-bulk"
+							],
+							"query": [
+								{
+									"key": "Date",
+									"value": "2025-09-12",
+									"description": "Shows the next value of a price on or before this date. Depending on this parameter, it may not be the latest value available."
+								},
+								{
+									"key": "ContinuationToken",
+									"value": "833d843d8d345cf94c5b9154800c096f",
+									"description": "If you want more of the output, enable this in \"Params\" (left checkbox) and edit the value to the continuationToken given in your previous output.",
+									"disabled": true
+								},
+								{
+									"key": "includemetadata",
+									"value": "true",
+									"disabled": true
+								},
+								{
+									"key": "frequency",
+									"value": "M",
+									"description": "Choose the type of frequency"
+								},
+								{
+									"key": "frequency",
+									"value": "A",
+									"description": "I can enable this to show two frequency types, the one above and this",
+									"disabled": true
+								},
+								{
+									"key": "unit",
+									"value": "USD/Local Weight Units",
+									"description": "Choose the type of units (local = what it was originally assessed in)"
+								}
+							]
+						},
+						"description": "Returns a list of the latest price values for all prices your account has access to, from [/CRU-Prices,](https://datalab.crugroup.com/CRU-Prices) or the price from the date closest (but before) the date you choose.\n\nA continuation token is typically required to see the entire output, as the list is usually quite long."
+					},
+					"response": []
+				},
+				{
+					"name": "forecast-prices-list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://datalab.crugroup.com/domain-api/forecast-prices-list",
+							"protocol": "https",
+							"host": [
+								"datalab",
+								"crugroup",
+								"com"
+							],
+							"path": [
+								"domain-api",
+								"forecast-prices-list"
+							],
+							"query": [
+								{
+									"key": "continuationToken",
+									"value": "536024b808292d1f9525561b9b2b1805",
+									"description": "If you want more of the output, enable this in \"Params\" (left checkbox) and edit the value to the continuationToken given in your previous output.",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Returns a list of all prices your account has access to from [/CRU-Forecast-Prices](https://datalab.crugroup.com/CRU-Forecast-Prices) including some useful metadata.\n\nA continuation token is typically required to see the entire output, as the list is usually quite long."
+					},
+					"response": []
+				},
+				{
+					"name": "forecast-prices",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://datalab.crugroup.com/domain-api/forecast-prices?id=93145a122aa61679a1d00941bb32fb56&release=2025 Q2&startDate=2020-01-01&endDate=2026-01-01&frequency=A&type=Nominal&unit=Local Currency and Weight Units",
+							"protocol": "https",
+							"host": [
+								"datalab",
+								"crugroup",
+								"com"
+							],
+							"path": [
+								"domain-api",
+								"forecast-prices"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "93145a122aa61679a1d00941bb32fb56",
+									"description": "Required"
+								},
+								{
+									"key": "release",
+									"value": "2025 Q2",
+									"description": "Required"
+								},
+								{
+									"key": "startDate",
+									"value": "2020-01-01",
+									"description": "Optional - otherwise starts from beginning of data series"
+								},
+								{
+									"key": "endDate",
+									"value": "2026-01-01",
+									"description": "Optional - otherwise ends on latest date"
+								},
+								{
+									"key": "frequency",
+									"value": "A",
+									"description": "Required - choose from A;Q;M (where applicable)"
+								},
+								{
+									"key": "type",
+									"value": "Nominal",
+									"description": "Required"
+								},
+								{
+									"key": "unit",
+									"value": "Local Currency and Weight Units",
+									"description": "Optional - otherwise gives Local"
+								},
+								{
+									"key": "continuationToken",
+									"value": "",
+									"description": "Typically not needed here",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Returns the forecast prices from [/CRU-Forecast-Prices](https://datalab.crugroup.com/CRU-Forecast-Prices) specified through the parameters."
+					},
+					"response": []
+				},
+				{
+					"name": "asset-list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://datalab.crugroup.com/domain-api/asset-list",
+							"protocol": "https",
+							"host": [
+								"datalab",
+								"crugroup",
+								"com"
+							],
+							"path": [
+								"domain-api",
+								"asset-list"
+							],
+							"query": [
+								{
+									"key": "continuationToken",
+									"value": "873daae22dc47c310f0b882604852684",
+									"description": "If you want more of the output, enable this in \"Params\" (left checkbox) and edit the value to the continuationToken given in your previous output.",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Returns a list of all assets your account has access to from [/CRU-Asset-Platform](https://datalab.crugroup.com/CRU-Asset-Platform) including some useful metadata.\n\nA continuation token is typically required to see the entire output, as the list is usually quite long."
+					},
+					"response": []
+				},
+				{
+					"name": "asset",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://datalab.crugroup.com/domain-api/asset?id=63fe35c561ac233d9c35d896&product=Alumina&startDate=2025-01-01&endDate=2026-01-01",
+							"protocol": "https",
+							"host": [
+								"datalab",
+								"crugroup",
+								"com"
+							],
+							"path": [
+								"domain-api",
+								"asset"
+							],
+							"query": [
+								{
+									"key": "continuationToken",
+									"value": "873daae22dc47c310f0b882604852684",
+									"description": "If you want more of the output, enable this in \"Params\" (left checkbox) and edit the value to the continuationToken given in your previous output.",
+									"disabled": true
+								},
+								{
+									"key": "id",
+									"value": "63fe35c561ac233d9c35d896"
+								},
+								{
+									"key": "product",
+									"value": "Alumina"
+								},
+								{
+									"key": "startDate",
+									"value": "2025-01-01"
+								},
+								{
+									"key": "endDate",
+									"value": "2026-01-01"
+								}
+							]
+						},
+						"description": "Returns dataseries from [/CRU-Asset-Platform](https://datalab.crugroup.com/CRU-Asset-Platform) based on the metadata specified in the request."
+					},
+					"response": []
+				},
+				{
+					"name": "supply-demand-list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://datalab.crugroup.com/domain-api/supply-demand-list?datasetId=CRU-SD-Forecast",
+							"protocol": "https",
+							"host": [
+								"datalab",
+								"crugroup",
+								"com"
+							],
+							"path": [
+								"domain-api",
+								"supply-demand-list"
+							],
+							"query": [
+								{
+									"key": "continuationToken",
+									"value": "3e695cfbd722f2a11dec44d6364ae99b",
+									"description": "If you want more of the output, enable this in \"Params\" (left checkbox) and edit the value to the continuationToken given in your previous output.",
+									"disabled": true
+								},
+								{
+									"key": "datasetId",
+									"value": "CRU-SD-Forecast",
+									"description": "You can pick from 2 datasets, the forecasts or historic (\"CRU-SD-Historic\")"
+								},
+								{
+									"key": "datasetId",
+									"value": "CRU-SD-Historic",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Returns a list of all assets your account has access to from [/CRU-Asset-Platform](https://datalab.crugroup.com/CRU-Asset-Platform) including some useful metadata.\n\nA continuation token is typically required to see the entire output, as the list is usually quite long."
+					},
+					"response": []
+				},
+				{
+					"name": "Supply Demand",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://datalab.crugroup.com/domain-api/supply-demand?datasetId=CRU-SD-Forecast&id=d76b6adc72bb0172cfbeea163507b812&startDate=2025-01-01&endDate=2026-01-01&release=Current&country=Canada&frequency=A&frequency=Q",
+							"protocol": "https",
+							"host": [
+								"datalab",
+								"crugroup",
+								"com"
+							],
+							"path": [
+								"domain-api",
+								"supply-demand"
+							],
+							"query": [
+								{
+									"key": "continuationToken",
+									"value": "873daae22dc47c310f0b882604852684",
+									"description": "If you want more of the output, enable this in \"Params\" (left checkbox) and edit the value to the continuationToken given in your previous output.",
+									"disabled": true
+								},
+								{
+									"key": "datasetId",
+									"value": "CRU-SD-Forecast",
+									"description": "The other dataset option is \"CRU-SD-Historic\""
+								},
+								{
+									"key": "id",
+									"value": "d76b6adc72bb0172cfbeea163507b812"
+								},
+								{
+									"key": "startDate",
+									"value": "2025-01-01"
+								},
+								{
+									"key": "endDate",
+									"value": "2026-01-01"
+								},
+								{
+									"key": "release",
+									"value": "Current"
+								},
+								{
+									"key": "country",
+									"value": "Canada"
+								},
+								{
+									"key": "frequency",
+									"value": "A"
+								},
+								{
+									"key": "frequency",
+									"value": "Q"
+								}
+							]
+						},
+						"description": "Returns a list of all assets your account has access to from [/CRU-Asset-Platform](https://datalab.crugroup.com/CRU-Asset-Platform) including some useful metadata.\n\nA continuation token is typically required to see the entire output, as the list is usually quite long."
+					},
+					"response": []
+				}
+			],
+			"description": "These examples require authorization, but also the relevant product access based on the commodities chosen in these examples, e.g. some examples are from the Steel Market Outlook and would require your account to have access in order to see an output.\n\nIf you do not have access to those products, you can modify the parameters based on something you do have access to (which you can discover from the -list endpoints or the online webpage for that dataset - a link to which is in the description side panel of the request).\n\nNote, the -list endpoints still work without authorization, but returns a very limited public sample."
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "Authorization",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
