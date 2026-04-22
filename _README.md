@@ -4,12 +4,12 @@ This repo provides examples on how to interact with the CRU DataLab API using to
 
 ## API Documentation
 
-For a more detailed breakdown of the API endpoints, request parameters, and response formats, please refer to the [CRU DataLab and DataLab API User Guide](https://cruonline.crugroup.com/help?tab=user-guides). 
+For a more detailed breakdown of the API endpoints, request parameters, and response formats, please refer to the [CRU DataLab and DataLab API User Guide](https://datalab.crugroup.com/jxpbwuf/help-center?s=full-documentation). 
 
 In the CRU DataLab API User Guide you'll find details on:
 * What is the API
 * Connecting to the API
-* API description
+* API endpoint description
 * Dataset use cases
 * Python examples 
 * Python - quick start guide
@@ -19,5 +19,5 @@ In the CRU DataLab API User Guide you'll find details on:
 
 ## Reporting Issues
 
-If you spot any bugs or issues, please feel free to raise them as an issue and we will endeavour to address them at the earliest opportunity.
+If you spot any bugs or issues, please feel free to raise them as an issue and we will endeavour to address them at the earliest opportunity: customer.services@crugroup.com
 
